@@ -7,7 +7,61 @@
 
 <style>
 *{box-sizing:border-box}
-body{
+<!-- FILE UPLOAD SYSTEM -->
+<section id="file-upload" style="padding:20px; max-width:600px; margin:auto;">
+  <h2>📚 Upload PDF / Word</h2>
+
+  <input type="file" id="fileInput" accept=".pdf,.doc,.docx">
+
+  <button onclick="uploadFile()" style="margin-top:15px; padding:10px 20px;">
+    Upload File
+  </button>
+
+  <p id="uploadMessage"></p>
+</section>
+
+<script>
+async function uploadFile() {
+  const file = document.getElementById("fileInput").files[0];
+  const message = document.getElementById("uploadMessage");
+
+  if (!file) {
+    message.innerText = "Tafadhali chagua PDF au Word file.";
+    return;
+  }
+
+  message.innerText = "File imechaguliwa: " + file.name;
+
+  // Hatua ya kuunganisha Supabase Storage tutaweka hapa
+}
+</script><!-- FILE UPLOAD SYSTEM -->
+<section id="file-upload" style="padding:20px; max-width:600px; margin:auto;">
+  <h2>📚 Upload PDF / Word</h2>
+
+  <input type="file" id="fileInput" accept=".pdf,.doc,.docx">
+
+  <button onclick="uploadFile()" style="margin-top:15px; padding:10px 20px;">
+    Upload File
+  </button>
+
+  <p id="uploadMessage"></p>
+</section>
+
+<script>
+async function uploadFile() {
+  const file = document.getElementById("fileInput").files[0];
+  const message = document.getElementById("uploadMessage");
+
+  if (!file) {
+    message.innerText = "Tafadhali chagua PDF au Word file.";
+    return;
+  }
+
+  message.innerText = "File imechaguliwa: " + file.name;
+
+  // Hatua ya kuunganisha Supabase Storage tutaweka hapa
+}
+</script>body{
   margin:0;
   font-family:Arial,sans-serif;
   background:#f5f7fb;
