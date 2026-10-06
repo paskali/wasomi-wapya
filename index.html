@@ -4,74 +4,607 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>WASOMI WAPYA | CHIBWANA ACADEMIC SERVICES</title>
-<link rel="stylesheet" href="style.css">
+
+<style>
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:Arial,sans-serif;
+  background:#f5f7fb;
+  color:#172033
+}
+header{
+  background:#123c69;
+  color:white;
+  padding:15px 5%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:15px
+}
+.brand h1{margin:0;font-size:25px}
+.brand p{margin:4px 0;font-size:13px}
+nav a{
+  color:white;
+  text-decoration:none;
+  margin:7px;
+  font-weight:bold
+}
+.hero{
+  padding:60px 8%;
+  background:linear-gradient(135deg,#123c69,#1976a8);
+  color:white;
+  text-align:center
+}
+.hero h2{font-size:38px;margin:15px 0}
+.hero p{max-width:700px;margin:auto;line-height:1.7}
+.btn,button{
+  display:inline-block;
+  border:0;
+  background:#f5a623;
+  color:#111;
+  padding:12px 20px;
+  border-radius:8px;
+  text-decoration:none;
+  font-weight:bold;
+  cursor:pointer;
+  margin:8px
+}
+.secondary{background:white}
+section{
+  padding:45px 7%;
+  max-width:1100px;
+  margin:auto
+}
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:20px
+}
+.card,.panel{
+  background:white;
+  padding:25px;
+  border-radius:12px;
+  box-shadow:0 3px 15px #0001;
+  margin-bottom:20px
+}
+input,select{
+  width:100%;
+  padding:13px;
+  margin:8px 0;
+  border:1px solid #ccd3dd;
+  border-radius:7px
+}
+.hidden{display:none!important}
+.status{
+  padding:12px;
+  border-radius:7px;
+  margin:10px 0;
+  background:#eef3f8
+}
+.file-item{
+  padding:15px;
+  border-bottom:1px solid #ddd
+}
+footer{
+  background:#123c69;
+  color:white;
+  text-align:center;
+  padding:25px
+}
+@media(max-width:700px){
+ header{justify-content:center;text-align:center}
+ nav{width:100%;text-align:center}
+ .hero h2{font-size:30px}
+}
+</style>
 </head>
+
 <body>
+
 <header>
   <div class="brand">
-    <img src="logo.png" alt="CHIBWANA ACADEMIC SERVICES">
-    <div>
-      <h1>WASOMI WAPYA</h1>
-      <p>CHIBWANA ACADEMIC SERVICES</p>
-    </div>
+    <h1>WASOMI WAPYA</h1>
+    <p>CHIBWANA ACADEMIC SERVICES</p>
   </div>
+
   <nav>
     <a href="#home">Home</a>
     <a href="#vitabu">Vitabu</a>
-    <a href="#mitihani">Mitihani</a>
     <a href="#downloads">Downloads</a>
-    <a href="#contact">Mawasiliano</a>
+    <a href="#account">Login</a>
   </nav>
 </header>
 
-<main>
 <section id="home" class="hero">
-  <div>
-    <span class="tag">BUILDING BRIGHT MINDS</span>
-    <h2>Karibu WASOMI WAPYA</h2>
-    <p>Mahali pa kupata vitabu, mitihani, majaribio na nyenzo bora za kujifunzia kwa wanafunzi na walimu.</p>
-    <div class="buttons">
-      <a class="btn" href="#vitabu">Tazama Vitabu</a>
-      <a class="btn secondary" href="#contact">Wasiliana Nasi</a>
-    </div>
-  </div>
-  <img class="hero-logo" src="logo.png" alt="CAS Logo">
+  <h2>Karibu WASOMI WAPYA</h2>
+  <p>
+    Mahali pa kupata vitabu, mitihani, majaribio na nyenzo
+    bora za kujifunzia kwa wanafunzi na walimu.
+  </p>
+
+  <a class="btn" href="#account">Ingia / Jisajili</a>
 </section>
 
 <section id="vitabu">
   <h2>📚 Vitabu vya Elimu</h2>
+
   <div class="cards">
-    <article><h3>Darasa la Tano</h3><p>Hisabati, Kiswahili, English, Sayansi na masomo mengine.</p><button>Coming Soon</button></article>
-    <article><h3>Historia na Maadili</h3><p>Nyenzo za kujifunzia Historia ya Tanzania na Maadili.</p><button>Coming Soon</button></article>
-    <article><h3>Jiografia</h3><p>Maswali, majibu na mazoezi ya Jiografia na Mazingira.</p><button>Coming Soon</button></article>
+    <div class="card">
+      <h3>Darasa la Tano</h3>
+      <p>Hisabati, Kiswahili, English, Sayansi na masomo mengine.</p>
+    </div>
+
+    <div class="card">
+      <h3>Historia na Maadili</h3>
+      <p>Nyenzo za Historia ya Tanzania na Maadili.</p>
+    </div>
+
+    <div class="card">
+      <h3>Jiografia</h3>
+      <p>Maswali, majibu na mazoezi ya Jiografia na Mazingira.</p>
+    </div>
   </div>
 </section>
 
-<section id="mitihani">
-  <h2>📝 Mitihani na Majaribio</h2>
-  <div class="info">
-    <p>Hapa tutaweka majaribio, mitihani ya shule na worksheets kwa madarasa mbalimbali.</p>
+<section id="account">
+  <div class="panel">
+    <h2>🔐 Akaunti ya Mtumiaji</h2>
+
+    <input id="email" type="email" placeholder="Barua pepe">
+    <input id="password" type="password" placeholder="Password">
+
+    <input id="fullName" type="text" placeholder="Jina kamili (kwa Signup tu)">
+
+    <button onclick="signup()">📝 Signup</button>
+    <button onclick="login()">🔑 Login</button>
+
+    <div id="authMessage" class="status"></div>
   </div>
 </section>
 
-<section id="downloads">
-  <h2>📥 Downloads</h2>
-  <div class="info">
-    <p>PDF na Word documents zitawekwa hapa kwa ajili ya kupakua.</p>
+<section id="dashboard" class="hidden">
+
+  <div class="panel">
+    <h2>📊 Dashboard</h2>
+
+    <p id="userInfo"></p>
+    <p id="roleInfo"></p>
+
+    <button onclick="logout()">🚪 Logout</button>
   </div>
+
+  <div id="uploadPanel" class="panel hidden">
+    <h2>📤 Upload PDF / Word</h2>
+
+    <input id="fileInput" type="file"
+      accept=".pdf,.doc,.docx">
+
+    <button onclick="uploadFile()">Upload File</button>
+
+    <div id="uploadMessage" class="status"></div>
+  </div>
+
+  <div class="panel">
+    <h2>📥 Documents</h2>
+    <div id="fileList">Inapakia documents...</div>
+  </div>
+
 </section>
 
-<section id="contact" class="contact">
-  <h2>📞 Mawasiliano</h2>
-  <p><strong>CHIBWANA ACADEMIC SERVICES</strong></p>
-  <p>WhatsApp / Simu: <a href="https://wa.me/255622837791">0622 837 791</a></p>
-  <a class="btn" href="https://wa.me/255622837791">Tuma WhatsApp</a>
+<section id="contact">
+  <div class="panel">
+    <h2>📞 Mawasiliano</h2>
+    <p><strong>CHIBWANA ACADEMIC SERVICES</strong></p>
+
+    <p>
+      WhatsApp / Simu:
+      <a href="https://wa.me/255622837791">
+        0622 837 791
+      </a>
+    </p>
+
+    <a class="btn" href="https://wa.me/255622837791">
+      Tuma WhatsApp
+    </a>
+  </div>
 </section>
-</main>
 
 <footer>
   <p>© 2026 CHIBWANA ACADEMIC SERVICES — WASOMI WAPYA</p>
   <p>BUILDING BRIGHT MINDS</p>
 </footer>
+
+<script type="module">
+
+/* ================================
+   SUPABASE CONFIGURATION
+   ================================ */
+
+import {
+  createClient
+} from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm";
+
+const SUPABASE_URL =
+  "https://eojxvvuwjayeslxtyhdl.supabase.co";
+
+/*
+  WEKA PUBLISHABLE KEY YAKO HAPA
+  Usitumie API Secret.
+*/
+const SUPABASE_PUBLISHABLE_KEY =
+  "WEKA_PUBLISHABLE_KEY_YAKO_HAPA";
+
+const supabase = createClient(
+  SUPABASE_URL,
+  SUPABASE_PUBLISHABLE_KEY
+);
+
+
+/* ================================
+   SIGNUP
+   ================================ */
+
+window.signup = async function(){
+
+  const email =
+    document.getElementById("email").value.trim();
+
+  const password =
+    document.getElementById("password").value;
+
+  const fullName =
+    document.getElementById("fullName").value.trim();
+
+  const message =
+    document.getElementById("authMessage");
+
+  if(!email || !password || !fullName){
+    message.textContent =
+      "Jaza jina, email na password.";
+    return;
+  }
+
+  const { data, error } =
+    await supabase.auth.signUp({
+      email: email,
+      password: password,
+      options:{
+        data:{
+          full_name: fullName
+        }
+      }
+    });
+
+  if(error){
+    message.textContent =
+      "Signup error: " + error.message;
+    return;
+  }
+
+  message.textContent =
+    "Signup imefanikiwa. Kama email confirmation imewashwa, angalia email yako.";
+};
+
+
+/* ================================
+   LOGIN
+   ================================ */
+
+window.login = async function(){
+
+  const email =
+    document.getElementById("email").value.trim();
+
+  const password =
+    document.getElementById("password").value;
+
+  const message =
+    document.getElementById("authMessage");
+
+  if(!email || !password){
+    message.textContent =
+      "Weka email na password.";
+    return;
+  }
+
+  const { data, error } =
+    await supabase.auth.signInWithPassword({
+      email: email,
+      password: password
+    });
+
+  if(error){
+    message.textContent =
+      "Login error: " + error.message;
+    return;
+  }
+
+  message.textContent =
+    "Login imefanikiwa.";
+
+  await loadDashboard();
+};
+
+
+/* ================================
+   DASHBOARD
+   ================================ */
+
+async function loadDashboard(){
+
+  const {
+    data:{user}
+  } = await supabase.auth.getUser();
+
+  if(!user){
+    return;
+  }
+
+  document
+    .getElementById("dashboard")
+    .classList.remove("hidden");
+
+  document
+    .getElementById("account")
+    .classList.add("hidden");
+
+  const { data:profile } =
+    await supabase
+      .from("profiles")
+      .select("full_name, role")
+      .eq("id", user.id)
+      .single();
+
+  if(profile){
+
+    document.getElementById("userInfo").textContent =
+      "Jina: " + (profile.full_name || user.email);
+
+    document.getElementById("roleInfo").textContent =
+      "Aina ya akaunti: " + profile.role;
+
+    if(
+      profile.role === "teacher" ||
+      profile.role === "admin"
+    ){
+      document
+        .getElementById("uploadPanel")
+        .classList.remove("hidden");
+    }
+  }
+
+  await loadFiles();
+}
+
+
+/* ================================
+   LOAD FILES
+   ================================ */
+
+async function loadFiles(){
+
+  const list =
+    document.getElementById("fileList");
+
+  const { data:files, error } =
+    await supabase
+      .from("files")
+      .select("*")
+      .order("created_at", {
+        ascending:false
+      });
+
+  if(error){
+    list.textContent =
+      "Imeshindikana kupata documents.";
+    return;
+  }
+
+  if(!files || files.length === 0){
+    list.textContent =
+      "Hakuna documents bado.";
+    return;
+  }
+
+  list.innerHTML = "";
+
+  files.forEach(file => {
+
+    const div =
+      document.createElement("div");
+
+    div.className = "file-item";
+
+    div.innerHTML = `
+      <strong>${escapeHTML(file.name)}</strong>
+      <br>
+      <small>${escapeHTML(file.file_type || "")}</small>
+      <br>
+      <button onclick="downloadFile('${file.id}','${escapeHTML(file.name)}')">
+        ⬇️ Download
+      </button>
+    `;
+
+    list.appendChild(div);
+  });
+}
+
+
+/* ================================
+   UPLOAD FILE
+   ================================ */
+
+window.uploadFile = async function(){
+
+  const input =
+    document.getElementById("fileInput");
+
+  const message =
+    document.getElementById("uploadMessage");
+
+  const file = input.files[0];
+
+  if(!file){
+    message.textContent =
+      "Chagua PDF au Word file kwanza.";
+    return;
+  }
+
+  const {
+    data:{user}
+  } = await supabase.auth.getUser();
+
+  if(!user){
+    message.textContent =
+      "Lazima uingie kwanza.";
+    return;
+  }
+
+  const extension =
+    file.name.split(".").pop();
+
+  const path =
+    user.id + "/" +
+    Date.now() + "-" +
+    file.name;
+
+  const { error:uploadError } =
+    await supabase.storage
+      .from("documents")
+      .upload(path, file);
+
+  if(uploadError){
+    message.textContent =
+      "Upload error: " +
+      uploadError.message;
+    return;
+  }
+
+  const {
+    data:{publicUrl}
+  } = supabase.storage
+      .from("documents")
+      .getPublicUrl(path);
+
+  const { error:dbError } =
+    await supabase
+      .from("files")
+      .insert({
+        name:file.name,
+        file_url:path,
+        file_type:extension,
+        uploaded_by:user.id
+      });
+
+  if(dbError){
+    message.textContent =
+      "File imeupload lakini database haijawekwa: " +
+      dbError.message;
+    return;
+  }
+
+  message.textContent =
+    "File imepakiwa kwa mafanikio.";
+
+  input.value = "";
+
+  await loadFiles();
+};
+
+
+/* ================================
+   DOWNLOAD
+   ================================ */
+
+window.downloadFile = async function(
+  id,
+  name
+){
+
+  const { data:file, error } =
+    await supabase
+      .from("files")
+      .select("file_url")
+      .eq("id", id)
+      .single();
+
+  if(error || !file){
+    alert("File haijapatikana.");
+    return;
+  }
+
+  const { data } =
+    await supabase.storage
+      .from("documents")
+      .createSignedUrl(
+        file.file_url,
+        3600
+      );
+
+  if(!data?.signedUrl){
+    alert("Imeshindikana kupata download link.");
+    return;
+  }
+
+  window.open(
+    data.signedUrl,
+    "_blank"
+  );
+};
+
+
+/* ================================
+   LOGOUT
+   ================================ */
+
+window.logout = async function(){
+
+  await supabase.auth.signOut();
+
+  document
+    .getElementById("dashboard")
+    .classList.add("hidden");
+
+  document
+    .getElementById("account")
+    .classList.remove("hidden");
+
+  document.getElementById("authMessage").textContent =
+    "Umetoka kwenye akaunti.";
+};
+
+
+/* ================================
+   SECURITY / HTML ESCAPE
+   ================================ */
+
+function escapeHTML(value){
+
+  return String(value)
+    .replaceAll("&","&amp;")
+    .replaceAll("<","&lt;")
+    .replaceAll(">","&gt;")
+    .replaceAll('"',"&quot;")
+    .replaceAll("'","&#039;");
+}
+
+
+/* ================================
+   CHECK EXISTING SESSION
+   ================================ */
+
+const {
+  data:{session}
+} = await supabase.auth.getSession();
+
+if(session){
+  await loadDashboard();
+}
+
+</script>
+
 </body>
-</html>
+</html>const SUPABASE_PUBLISHABLE_KEY =
+  "sb_publishable_-mLMamu6Rfu53FinVR-zXg_sr-yWxOt";
